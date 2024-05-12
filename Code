@@ -1,0 +1,1050 @@
+pdf making 
+
+app.set('views', path.join(__dirname, '/views'));
+app.set('view engine', 'hbs');
+
+home.hbs
+
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Document</title>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous' />
+</head>
+<style>
+  @font-face {
+    font-family: 'ITC Franklin Gothic';
+    src: url('http://localhost:3005/ITC-Franklin-Gothic-Std-Demi.otf'),
+      url('https://twilio.vipankumar.in/ITC-Franklin-Gothic-Std-Demi.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url('http://localhost:3005/Helvetica Neue LT Std 75 Bold.otf'),
+      url('https://twilio.vipankumar.in/Helvetica Neue LT Std 75 Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'HelveticaNeue Roman';
+    src: url('http://localhost:3005/HelveticaNeueLTStd-Roman.otf'),
+      url('https://twilio.vipankumar.in/HelveticaNeueLTStd-Roman.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body,
+  a,
+  span,
+  p,
+  {
+  font-family: 'HelveticaNeue Roman';
+  }
+
+  h3 {
+    font-family: 'ITC Franklin Gothic' !important;
+  }
+
+  .no-space {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+.f-13 {
+    font-size: 11px;
+    line-height: 14px;
+}
+  .f-11
+  {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .f-14 {
+    font-size: 13px;
+  }
+
+  .f-15 {
+    font-size: 13px;
+  }
+
+  .taxpay-td {
+    padding-left: 10px;
+  }
+
+  .f-40 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .bold {
+    font-weight: 800;
+  }
+
+  .semi-bold {
+    font-weight: 500;
+  }
+
+  input:focus {
+    outline: none !important;
+  }
+
+  .border-rght {
+    border-right: 2px solid #4b4b4b;
+  }
+
+  .border-lft {
+    border-left: 2px solid #4b4b4b;
+  }
+
+  .border-btm {
+    border-bottom: 2px solid #4b4b4b !important;
+  }
+
+  .right-col {
+    display: table;
+    height: 100%;
+  }
+
+  .right-col p {
+    vertical-align: middle;
+    display: table-cell;
+  }
+
+  .tax-paytable td {
+    vertical-align: bottom;
+  }
+
+  .f-26 {
+    font-size: 19px;
+  }
+
+  .middle-col {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .f-22 {
+    font-size: 13px;
+    line-height: 15px;
+  }
+.taxpay-input {
+    background: #f1f4ff;
+    height: 17px;
+    padding: 0 10px 0 28px;
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+    font-size: 11px;
+}
+
+  .right-bottom {
+    border-right: 2px solid #4b4b4b;
+    border-bottom: 2px solid #4b4b4b;
+  }
+  .border-tp
+  {
+    border-top: 2px solid #4b4b4b;
+  }
+  .signature {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    border-top: 2px solid #4b4b4b;
+}
+.signature-box {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+  .left-rght-spc {
+    padding: 0 6px 0 0px;
+    min-width: 15px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .taxpay-no {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+.indicate-tab .taxpay-input {
+    padding-left: 10px;
+}
+  .taxpay-no span {
+    min-width: 45px;
+  }
+  .f-12 {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  span.para-input input.taxpay-input {
+      width: 100px;
+  }
+  .helvetic,
+  strong,
+  .bold {
+    font-family: 'Helvetica Neue';
+  }
+  .hel-light
+  {
+    font-family: 'HelveticaNeue Roman';
+    font-weight: 100;
+  }
+  .what-new p {
+    margin-bottom: 4px;
+}
+  .privacy-act
+  {
+    display: flex;
+    justify-content: space-between;
+  }
+  a.link {
+    color: #000;
+    text-decoration: none !important;
+}
+ul.form-list {
+    padding-left: 20px;
+    margin-bottom: 4px;
+}
+.form-list li {
+    line-height: normal;
+}
+</style>
+
+<body>
+  <section class='pdf-top-section' style="padding-top: 30px;">
+    <div class='container-space' style="width: 96%; margin: 0 auto">
+      <div class='row border-btm' style="width: 100%; margin: 0 auto;">
+        <div class='col-2 no-space'>
+          <div class='left-col'>
+            <p class="no-space"><span class='f-13 no-space'>Form <strong class='f-40 helvetic'>8655</strong></span></p>
+            <p class='f-12 no-space'>(Rev. October 2018)</p>
+            <p class='f-12 no-space' style="line-height: 10px; font-size: 9px;">Department of the Treasury Internal Revenue Service</p>
+          </div>
+        </div>
+        <div class='col-8 border-rght border-lft no-space'>
+          <div class='middle-col text-center'>
+            <h3 class='f-26 bold' style="padding-bottom: 10px;">Reporting Agent Authorization</h3>
+            <p class='f-12 bold no-space small-icon'> 
+              <svg style="margin-top: -2px;" fill="#000000" height="10px" width="12px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M15.541,490V0l458.917,245.009L15.541,490z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+              Information about Form 8655 and its instructions is at
+              www.irs.gov/Form8655.</p>
+          </div>
+        </div>
+        <div class='col-2 no-space'>
+          <div class='right-col text-center' style="width: 100%;">
+            <p class='f-11 text-center'>OMB No. 1545-1058</p>
+          </div>
+        </div>
+      </div>
+      <div class="title border-btm">
+        <h4 class="f-22 no-space bold">Taxpayer</h4>
+      </div>
+      <div class="tax-paytable">
+        <table style="width: 100%;">
+          <tbody>
+            <tr>
+              <td class="right-bottom" colspan="2">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="semi-bold f-13"><strong class="left-rght-spc">1a</strong> Name of taxpayer (as
+                      distinguished from trade name)</span>
+                  </div>
+                  <input class="taxpay-input" type="text" name="name" value="{{ name }}" style="border: none !important;"></input>
+                </div>
+              </td>
+              <td class="right-lf border-btm">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="bold f-13"><strong> <span class="left-rght-spc">2</span> Employer identification number
+                        (EIN)</strong></span>
+                  </div>
+                  <input class="taxpay-input" value="{{ ein }}" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td class="right-bottom" colspan="2">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="f-13"><strong class="left-rght-spc">1b</strong> Trade name, if any</span>
+                  </div>
+                  <input class="taxpay-input" value="{{ company }}" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+              <td class="right-lf border-btm">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="f-13"><strong> <span class="left-rght-spc">4</span></strong> If you are a seasonal
+                      employer,
+                      check here <span style="letter-spacing: 6px;">. . . . . . . </span>
+                      <div class="form-check" style="margin-bottom: 0 !important; display: inline-block; vertical-align: top; margin-left: 10px;">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                          style="height: 14px; width: 14px; border: 2px solid #949494; border-radius: 0;">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        </label>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td class="right-bottom" colspan="2">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="semi-bold f-13"><strong class="left-rght-spc">3</strong> Address (number, street, and
+                      room or suite no.)
+                    </span>
+                  </div>
+                  <input class="taxpay-input" value="{{ address }}"  type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+              <td class="right-lf border-btm">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="f-13"><strong> <span class="left-rght-spc">5</span></strong> Other identification
+                      number (optional)
+                    </span>
+                  </div>
+                  <input class="taxpay-input" value="nil" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td colspan="3" class="right-bottom" style="border-right: 0 !important">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="semi-bold f-13"><strong class="left-rght-spc"></strong>City or town, state, and ZIP
+                      code
+                    </span>
+                  </div>
+                  <input class="taxpay-input" value="{{ loca }}" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td class="right-bottom" style="width: 33%;">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="semi-bold f-13"><strong class="left-rght-spc">6</strong> Contact person</span>
+                  </div>
+                  <input class="taxpay-input" value="Raawat" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+              <td class="right-lf border-btm" style="width: 33%;">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="f-13"><strong> <span class="left-rght-spc">7</span></strong>Daytime telephone number
+                    </span>
+                  </div>
+                  <input class="taxpay-input" value="{{ phone }}" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+              <td class="right-lf border-btm border-lft" style="width: 33%;">
+                <div>
+                  <div class="taxpay-td">
+                    <span class=" f-13"><strong> <span class="left-rght-spc">8</span> </strong> Fax number
+                    </span>
+                  </div>
+                  <input class="taxpay-input" value="340005" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="right-bottom" colspan="3" style="border-right: none;">
+                <div>
+                  <div class="taxpay-td" style="padding-left: 0 !important;">
+                    <h4 class="f-22 no-space bold">Reporting Agent</h4>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="right-bottom" colspan="2">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="semi-bold f-13"><strong class="left-rght-spc">9</strong> Name (enter company name or
+                      name of business)</span>
+                  </div>
+                  <input class="taxpay-input" value="{{ company }}" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+              <td class="right-lf border-btm">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="bold f-13"><strong> <span class="left-rght-spc">10</span></strong> Employer
+                      identification number (EIN)</span>
+                  </div>
+                  <input class="taxpay-input" value="{{ ein }}" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="right-bottom" colspan="3" style="border-right: none;">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="semi-bold f-13"><strong class="left-rght-spc">11</strong> Address (number, street, and
+                      room or suite no.)</span>
+                  </div>
+                  <input class="taxpay-input" type="text" value="Street No.122 Mohali" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="right-bottom" colspan="3" style="border-right: none;">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="semi-bold f-13"><strong class="left-rght-spc"></strong>City or town, state, and ZIP
+                      code</span>
+                  </div>
+                  <input class="taxpay-input" value="Street No.122 Mohali" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="right-bottom" style="width: 33%;">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="semi-bold f-13"><strong class="left-rght-spc">12</strong> Contact person</span>
+                  </div>
+                  <input class="taxpay-input" value="Harin" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+              <td class="right-lf border-btm" style="width: 33%;">
+                <div>
+                  <div class="taxpay-td">
+                    <span class="f-13"><strong> <span class="left-rght-spc">13</span></strong>Daytime telephone number
+                    </span>
+                  </div>
+                  <input class="taxpay-input" value="3324455320" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+              <td class="right-lf border-btm border-lft" style="width: 33%;">
+                <div>
+                  <div class="taxpay-td">
+                    <span class=" f-13"><strong> <span class="left-rght-spc">14</span> </strong> Fax number
+                    </span>
+                  </div>
+                  <input class="taxpay-input" value="Fa3244" type="text" name="name" style="border: none !important;"></input>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="title border-btm">
+        <h4 class="f-22 no-space"><span class="bold">Authorization of Reporting Agent to Sign and File Returns
+            (Caution:</span> <span class="hel-light"> See <span style="font-style: italic;"> Authorization Agreement)</span> </span></h4>
+      </div>
+      <div class="authorize-tab indicate-tab">
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-1 taxpay-td no-space" style="padding-left: 10px !important;"><span class="bold f-13">15</span>
+          </div>
+          <div class="col-11 taxpay-td no-space">
+            <span class="f-13">Indicate the tax return(s) to be signed and filed. For quarterly returns, use “YYYY/MM”
+              format. “MM” is the last month of the quarter for which the authorization begins
+              (for example, “2018/09” for third quarter of 2018). For annual returns, use “YYYY” format to indicate the
+              year for which the authorization begins.</span>
+            <div class="inner-rw row" style="width: 100%; margin: 5px auto 0 auto;">
+              <div class="col-12 col-md-2 no-space">
+                <div class="taxpay-no">
+                  <span class="f-13">940</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">943-PR</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">940</span>
+                  <input class="taxpay-input border-btm"  value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">943-PR</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">940-PR</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">945</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">941-PR</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">1042</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">941-SS</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">CT-1</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">943</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="title border-btm border-tp" style="margin-top: 14px;">
+        <h4 class="f-22 no-space"><span class="bold">Authorization of Reporting Agent to Make Deposits and Payments (Caution:</span> 
+       <span class="hel-light"> See <span style="font-style: italic;"> Authorization Agreement)</span></span></h4>
+      </div>
+      <div class="authorize-tab indicate-tab">
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-1 taxpay-td no-space" style="padding-left: 10px !important;"><span class="bold f-13">16</span>
+          </div>
+          <div class="col-11 taxpay-td no-space">
+            <span class="f-13">Indicate the tax return(s) for which the reporting agent is authorized to make deposits or payments. Use the “YYYY/MM” format to enter the month in which the
+authorization begins (for example, “2018/08” for August 2018).</span>
+            <div class="inner-rw row" style="width: 100%; margin: 5px auto 0 auto;">
+              <div class="col-12 col-md-2 no-space">
+                <div class="taxpay-no">
+                  <span class="f-13">940</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">1041</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">941</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">1042</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">943</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">1120</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">944</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">CT-1</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">945</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">990-PF</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+              <div class="col-12 col-md-2  no-space" style="padding-left: 6px !important;">
+                <div class="taxpay-no">
+                  <span class="f-13">720</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+                <div class="taxpay-no">
+                  <span class="f-13">990-T</span>
+                  <input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></input>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="title border-btm border-tp" style="margin-top: 14px;">
+        <h4 class="f-22 no-space"><span class="bold">Duplicate Notices to Reporting Agents</span></h4>
+      </div>
+      <div class="authorize-tab ">
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-1 taxpay-td no-space" style="padding-left: 10px !important;"><span class="bold f-13">17</span>
+          </div>
+          <div class="col-11 taxpay-td no-space">
+            <span class="f-13">Check here to request the IRS to issue to the reporting agent duplicate copies of notices and correspondence regarding returns filed and
+             deposits or payments made by the reporting agent <span style="letter-spacing: 4px;">. . . . . . . . . . . . . . . . . . . . . . . . . .</span>
+            <div class="form-check" style="display: inline-block; vertical-align: top; margin-left: 10px;">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="height: 14px; width: 14px; border: 2px solid #949494; border-radius: 0;">
+              <label class="form-check-label" for="flexCheckDefault"></label>
+            </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="title border-btm border-tp" style="margin-top: 4px;">
+        <h4 class="f-22 no-space"><span class="bold">Disclosure Authorization for Forms Series W-2, 1099, and/or 3921/3922</span></h4>
+      </div>
+      <div class="authorize-tab  indicate-tab">
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-1 taxpay-td no-space" style="padding-left: 10px !important;"><span class="bold f-13">18a</span>
+          </div>
+          <div class="col-11 taxpay-td no-space">
+            <span class="f-13">
+            The reporting agent is authorized to receive otherwise confidential taxpayer information from the IRS to assist in responding to certain IRS
+            notices relating to the Form W-2 series information returns. This authority is effective for calendar year forms beginning 
+            <span class="para-input"><input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></span> .
+            </span>
+          </div>
+        </div>
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-1 taxpay-td no-space" style="padding-left: 10px !important;">
+            <span class="bold f-13">b</span>
+          </div>
+          <div class="col-11 taxpay-td no-space">
+            <span class="f-13">
+           The reporting agent is authorized to receive otherwise confidential taxpayer information from the IRS to assist in responding to certain IRS
+          notices relating to the Form 1099 series information returns. This authority is effective for calendar year forms beginning
+            <span class="para-input"><input class="taxpay-input border-btm" value="2022/11" type="text" name="name" style="border: none;"></span>.
+            </span>
+          </div>
+        </div>
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-1 taxpay-td no-space" style="padding-left: 10px !important;"><span class="bold f-13">c</span>
+          </div>
+          <div class="col-11 taxpay-td no-space">
+            <span class="f-13">
+            The reporting agent is authorized to receive otherwise confidential taxpayer information from the IRS to assist in responding to certain IRS
+            notices relating to the Forms 3921 and 3922. This authority is effective for calendar year forms beginning
+            <span class="para-input"><input class="taxpay-input border-btm" value="2022/12" type="text" name="name" style="border: none;"></span>.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="title border-btm border-tp" style="margin-top: 4px;">
+        <h4 class="f-22 no-space"><span class="bold">State or Local Authorization (Caution: <span class="hel-light"> See <span style="font-style: italic;"> Authorization Agreement)</span></span> </span></h4>
+      </div>
+      <div class="authorize-tab">
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-1 taxpay-td no-space" style="padding-left: 10px !important;"><span class="bold f-13">19</span>
+          </div>
+          <div class="col-11 taxpay-td no-space">
+            <span class="f-12">Check here to authorize the reporting agent to sign and file state or local returns related to the authorization granted on line 15 and/or line 16 <span style="letter-spacing: 4px;"> . .</span>
+            <div class="form-check" style="display: inline-block; vertical-align: top; margin-left: 10px;">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="height: 14px; width: 14px; border: 2px solid #949494; border-radius: 0;">
+              <label class="form-check-label" for="flexCheckDefault"></label>
+            </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="title border-btm border-tp">
+        <h4 class="f-22 no-space"><span class="bold">Authorization Agreement</span></h4>
+      </div>
+      <div class="authorize-tab">
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-12 taxpay-td no-space">
+            <span class="f-12"><span class="bold">I understand that this agreement does not relieve me, as the taxpayer, of the responsibility to ensure that all tax returns are filed and that all deposits and
+            payments are made and that I may enroll in the Electronic Federal Tax Payment System (EFTPS) to view deposits and payments made on my behalf.</span> If line 15 is
+            completed, the reporting agent named above is authorized to sign and file the return indicated, beginning with the quarter or year indicated. If any starting dates on line 16
+            are completed, the reporting agent named above is authorized to make deposits and payments beginning with the period indicated. Any authorization granted remains in
+            effect until it is terminated or revoked by the taxpayer or reporting agent. I am authorizing the IRS to disclose otherwise confidential tax information to the reporting agent
+            relating to the authority granted on line 15 and/or line 16, including disclosures required to process Form 8655. Disclosure authority is effective upon signature of taxpayer
+            and IRS receipt of Form 8655. The authority granted on Form 8655 will not revoke any Power of Attorney (Form 2848) or Tax Information Authorization (Form 8821) in effect.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="authorize-tab border-tp">
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-1 right-bottom no-space">
+            <div class=" right-col text-center"> 
+              <p class="f-22 no-space text-center"><span class="bold">Sign Here</span></p>
+            </div>
+          </div>
+          <div class="col-11 taxpay-td no-space border-btm">
+            <span class="f-12" style="padding-left: 10px; padding-bottom: 20px; display: block;">I certify I have the authority to execute this form and authorize disclosure of otherwise confidential information on behalf of the taxpayer.
+            </span>
+            <div class="row" style="width: 100%; margin: 0 auto; align-items: flex-end;">
+              <div class="col-5" style="padding-left: 10px;"> 
+                <div class="signature-box">
+                  <div class="svg-arrow"><svg fill="#000000" height="45px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 386.258 386.258" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="96.879,0 96.879,386.258 289.379,193.129 "></polygon> </g></svg></div>
+                  <div class="signature"><span class="f-12" >Signature of taxpayer</span></div>
+                </div>
+              </div>
+              <div class="col-4"> 
+                <div class="signature-box">
+                  <div class="svg-arrow"><svg fill="#000000" height="45px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 386.258 386.258" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="96.879,0 96.879,386.258 289.379,193.129 "></polygon> </g></svg></div>
+                  <div class="signature title" style="border: none;">
+                    <div class="taxpay-no">
+                      <input class="taxpay-input border-btm" value="Title" style="text-align:center; border: none; padding-left: 0" type="text" name="name" style="border: none;">
+                    </div>
+                    <span class="f-13">Title</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3" style="padding-left: 10px;"> 
+                <div class="signature-box">
+                  <div class="svg-arrow"><svg fill="#000000" height="45px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 386.258 386.258" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="96.879,0 96.879,386.258 289.379,193.129 "></polygon> </g></svg></div>
+                  <div class="signature"><span class="f-13" >Date</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="privacy-act border-btm">
+        <span class="bold f-13">For Privacy Act and Paperwork Reduction Act Notice, see instructions.</span>
+        <span class="f-12">Cat. No. 10241T</span>
+        <span class="f-12">Form <span class="f-22 bold">8655</span> (Rev. 10-2018)</span>
+      </div>
+      <!-- page 2 Instructions --->
+      <div class="authorize-tab" style="margin-top: 15px;">
+        <div class="row" style="width: 100%; margin: 0 auto;">
+          <div class="col-6 taxpay-td no-space what-new" style="padding-right: 10px !important;">
+            <h4 class="f-22 bold">Instructions</h4>
+            <h6 class="f-15 bold">What’s New</h6>
+            <p class="f-11" style="line-height: 15px;">
+              <span class="bold">Fax number.</span> The fax number for Form 8655 is changed to 855-214-7523.
+                When faxing Forms 8655, please send no more than 25 forms in a single transmission. If possible, please send faxes directly from your computer
+                instead of from a fax machine.</p>
+            <p class="f-11" style="line-height: 15px;">
+              <span class="bold">Updated instructions for lines 15 and 16.</span> The instructions for lines 15 and
+              16 have been clarified and now appear at the lines themselves. Please use the “YYYY/MM” format instead of the “MM/YYYY” format.</p>
+            <p class="f-11" style="line-height: 15px;">
+              <span class="bold">Former line 17a removed.</span> The authorization agreement at the bottom of the
+              form provides the disclosure authority previously covered by line 17a.
+            </p>
+            <p class="f-11" style="line-height: 15px;">
+              <span class="bold">Increasing or decreasing authority.</span> The instructions with regard to
+              increasing or decreasing authority have been clarified. See <span style="font-style: italic;"> Authority Granted.</span>
+            </p>
+            <p class="f-11" style="line-height: 15px;">
+              <span class="bold">Termination and Revocation.</span> The instructions have been updated to
+              distinguish between these terms and to explain the procedure for each. See <span style="font-style: italic;"> Terminating or Revoking an Authorization.</span>
+            </p>
+            <h6 class="f-15 bold" style="padding-top: 6px;">Purpose of Form</h6>
+            <p class="f-11" style="line-height: 15px;">Use Form 8655 to authorize a reporting agent to:</p>
+            <ul class="form-list">
+              <li>
+              <span class="f-11">Sign and file certain returns. Reporting agents must file returns
+                electronically except as provided under Rev. Proc. 2012-32. You can find Rev. Proc. 2012-32 on page 267 of Internal Revenue Bulletin 2012-34 at
+                <span style="font-style: italic;"><a href="#" class="link">  www.irs.gov/pub/irs-irbs/irb12-34.pdf</a> </span> See Pub. 3112, IRS   <span style="font-style: italic;">e-file </span> Application and Participation, for information about e-filing and getting the reporting
+                agent PIN;
+              </li>
+              <li>
+                <span class="f-11">Make deposits and payments for certain returns. Reporting agents must
+                  make deposits and payments electronically, generally through the Electronic Federal Tax Payment System (EFTPS.gov). See Pub. 4169, Tax Professional
+                  Guide to EFTPS, and Rev. Proc. 2012-33;
+              </li>
+              <li>
+                <span class="f-11"> Receive duplicate copies of tax information, notices, and other written and/
+                or electronic communication regarding any authority granted; and
+              </li>
+              <li>
+                <span class="f-11"> Provide IRS with information to aid in penalty relief determinations related
+                to the authority granted on Form 8655.
+              </li>
+            </ul>
+            <p class="f-11"><span class="bold"> Note. </span>An authorization does not relieve the taxpayer of the responsibility (or
+              from liability for failing) to ensure that all tax returns are filed timely and that all federal tax deposits (FTDs) and federal tax payments (FTPs) are made
+              timely. A reporting agent must notify its client of that fact and must recommend that it enroll in the Electronic Federal Tax Payment System
+              (EFTPS) to view EFTPS deposits and payments made on the client’s behalf. A reporting agent must provide this notification, in writing, upon entering into
+              an agreement with the client and at least quarterly thereafter for as long as it provides services to that client. Sample language and other details may be
+              found in Rev. Proc. 2012-32, Section 5.05.</p>
+            <h6 class="f-15 bold" style="padding-top: 6px;">Authority Granted</h6>
+            <p class="f-11">Once Form 8655 is signed, any authority granted is effective beginning with
+              the period indicated on lines 15, 16, 18a, 18b, and/or 18c and continues indefinitely unless terminated or revoked by the taxpayer or reporting agent.
+              No authorization or authority is granted for periods prior to the period(s) indicated on Form 8655.</p>
+            <p class="f-11" style="text-indent: 14px;"> Where authority is granted for any form, it is also effective for related forms
+              such as the corresponding non-English language form, amended return, (Form 941-X, 941-X(PR), 943-X, 944-X, 945-X, or CT-1X), or payment
+              voucher. For example, Form 8655 can be used to provide authorization for Form 944-SP using the entry spaces for Form 944. The form also can be
+              used to authorize a reporting agent to make deposits and payments for other returns in the Form 1120 series, such as Form 1120-C, using the entry space for Form 1120 on line 16.</p>
+             <p class="f-11" style="text-indent: 14px;"> Disclosure authority is effective upon signature of taxpayer and IRS receipt
+                of Form 8655. Any authority granted on Form 8655 does not revoke and has no effect on any authority granted on Forms 2848 or 8821, or any third-party designee checkbox authority.</p>
+             <p class="f-11" style="text-indent: 14px;">  To increase the authority granted to a reporting agent by a Form 8655 already in effect, submit another signed Form 8655, completing lines 1–14
+                and any line on which you want to add authority. To decrease the authority granted to a reporting agent by a Form 8655 already in effect, send a signed, written request to the address under <span style="font-style: italic;"> Where To File.</span> The preceding authorization remains in effect except as modified by the new one.
+             </p>
+              <p class="f-11">  <span class="bold">Privacy Act and Paperwork Reduction Act Notice.</span> We ask for the information on this form to carry out the Internal Revenue laws of the United
+                States. Our authority to request this information is Internal Revenue Code sections 6011, 6061, 6109, and 6302 and the regulations thereunder. We use
+                this information to identify you and record your reporting agent authorization. You are not required to authorize a reporting agent to act on your behalf.
+                However, if you choose to authorize a reporting agent, you are required to provide the information requested, including your identification number.
+                Failure to provide all the information requested may prevent or delay processing of your authorization; providing false or fraudulent information
+                may subject you to penalties.
+             </p>
+             <p class="f-11" style="text-indent: 14px;">  Routine uses of this information   include giving it to the Department of
+              Justice for civil and criminal litigation, and to cities, states, the District of Columbia, and U.S. commonwealths and possessions for use in
+              administering their tax laws. We may also disclose this information to other countries under a tax treaty, to federal and state agencies to enforce federal
+              nontax criminal laws, or to federal law enforcement agencies and intelligence agencies to combat terrorism.
+             </p>
+          </div>
+          <div class="col-6 taxpay-td no-space what-new" style="padding-left: 10px !important;">
+              <h6 class="f-15 bold">Where To File</h6>
+              <p class="f-11">Send Form 8655 to:</p>
+              <p class="f-11">
+                <span style="text-indent: 14px; display: block;">Internal Revenue Service</span>
+                <span style="text-indent: 14px; display: block;">Accounts Management Service Center</span>
+                <span style="text-indent: 14px; display: block;">MS 6748 RAF Team</span>
+                <span style="text-indent: 14px; display: block;">1973 North Rulon White Blvd.</span>
+                <span style="text-indent: 14px; display: block;">Ogden, UT 84404</span>
+              </p>
+              <p class="f-11" style="text-indent: 14px;">You can fax Form 8655 to the IRS. The number is 855-214-7523. When
+                faxing Forms 8655, please send no more than 25 forms in a single transmission. If possible, please send faxes from your computer instead of a
+                fax machine.</p>
+              <h6 class="f-15 bold" style="padding-top: 6px;">Additional Information</h6>
+              <p class="f-11">Additional information concerning reporting agent authorizations may be
+              found in:</p>
+              <ul class="form-list f-11">
+                <li><span class="bold"> Pub. 1474,</span> Technical Specifications Guide for Reporting Agent
+                  Authorization and Federal Tax Depositors.</li>
+                <li><span class="bold"> Rev. Proc. 2012-32.</span></li>
+              </ul>
+              <h6 class="f-15 bold" style="padding-top: 6px;">Substitute Form 8655</h6>
+              <p class="f-11">If you want to prepare and use a substitute Form 8655, see Pub. 1167, General Rules and Specifications for Substitute Forms and Schedules. If your
+                substitute Form 8655 is approved, the form approval number must be printed in the lower left margin of each substitute Form 8655 you file with the
+                IRS.</p>
+              <h6 class="f-15 bold" style="padding-top: 6px;">Terminating or Revoking an Authorization</h6>
+              <p class="f-11">If you have a valid Form 8655 on file with the IRS, the filing of a new Form
+                8655 indicating a new reporting agent terminates the authority of the prior reporting agent beginning with the period indicated on the new Form 8655.
+                However, the prior reporting agent is still an authorized reporting agent and retains any previously granted disclosure authority for the periods prior to the
+                beginning period of the new reporting agent’s authorization unless
+                specifically revoked.</p>
+              <p class="f-11" style="text-indent: 14px;"> If the taxpayer wants to revoke an existing authorization, such that the reporting agent would no longer be authorized to act or receive information
+                for previously authorized tax periods, send a copy of the previously executed Form 8655 to the IRS at the address under <span style="font-style: italic;"> Where To File,</span> above. Re-sign the
+                copy of the Form 8655 under the original signature. Write “REVOKE” across the top of the form. If you do not have a copy of the authorization you want
+                to revoke, send a statement to the IRS. The statement of revocation must indicate that the authority of the reporting agent is revoked and must be
+                signed by the taxpayer. Also, list the name and address of each reporting
+                agent whose authority is revoked. 
+              </p>
+              <p class="f-11"  style="text-indent: 14px;">A reporting agent may terminate its authority by filing a statement with the
+                IRS, either on paper or using a delete process. A reporting agent wanting to revoke its authority must submit the request in writing. The statement must
+                be signed by the reporting agent (if filed on paper) and identify the name and address of the taxpayer and authorization(s) from which the reporting agent
+                is withdrawing. For information on the delete process, see Pub. 1474.</p>
+               <h6 class="f-15 bold" style="padding-top: 6px;">Who Must Sign</h6>
+               <p class="f-11"><span class="bold"> Electronic signature. </span> For guidance on optional electronic signature methods, including approved methods of authentication and signature and
+                additional items that must appear on the Form 8655, see Pub. 1474, section 01.03</p>
+              <p class="f-11"><span class="bold"> Sole proprietorship.  </span> The individual owning the business</p>
+              <p class="f-11"><span class="bold">Corporation</span>  (including a limited liability company (LLC) treated as a corporation). Generally, Form 8655 can be signed by: (a) an officer having
+                legal authority to bind the corporation, (b) any person designated by the board of directors or other governing body, (c) any officer or employee on
+                written request by any principal officer, and (d) any other person authorized to access information under section 6103(e).
+              </p>
+              <p class="f-11"><span class="bold">Partnership</span> (including an LLC treated as a partnership) or an
+              unincorporated organization. Generally, Form 8655 can be signed by any person who was a member of the partnership during any part of the tax
+              period covered by Form 8655.</p>
+              <p class="f-11"><span class="bold">Single member LLC treated as a disregarded entity.</span>  
+              The owner of the LLC.</p>
+              <p class="f-11"><span class="bold">Trust or estate.</span> The fiduciary</p>
+              <p class="f-11" style="text-indent: 14px;">You are not required to provide the information requested on a form that is
+              subject to the Paperwork Reduction Act unless the form displays a valid OMB control number. Books or records relating to a form or instructions
+              must be retained as long as their contents may become material in the administration of any Internal Revenue law.</p>
+              <p class="f-11" style="text-indent: 14px;">The time needed to complete and file Form 8655 will vary depending on
+              individual circumstances. The estimated average time is 1 hour, 7 minutes.
+              </p>
+              <p class="f-11" style="text-indent: 14px;"> If you have comments concerning the accuracy of this time estimate or suggestions for making Form 8655 simpler, we would be happy to hear from
+                you. You can send us comments from <a class="link" href="#" style="font-style: italic;"> www.irs.gov/formspubs.</a> Click on <span style="font-style: italic;"> More Information </span> and then click on <span style="font-style: italic;"> Give us feedback.</span> Or you can send your
+                comments to Internal Revenue Service, Tax Forms and Publications Division, 1111 Constitution Ave. NW, IR-6526, Washington, DC 20224. <span class="bold">Do not </span> send
+                Form 8655 to this address. Instead, see <span style="font-style: italic;"> Where To File,</span> earlier. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</body>
+
+</html>
+
+
+
+
+
+///////////////////////////////////////////////////////////
+
+
+pdf contotller 
+
+
+
+
+
+const puppeteer = require('puppeteer');
+const path = require('path');
+const catchAsync = require('../utils/catchAsync');
+
+const getPdf = catchAsync(async (req, res) => {
+  const UserId = req.params.id;
+  console.log(UserId, 'UserId');
+  try {
+    // We start a new browser, without showing UI
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox'],
+    });
+    const page = await browser.newPage();
+    const url = `${process.env.BACKEND_URL}/v1/pdf/${UserId}`;
+
+    // We load the page, one of my blog post (networkidle0 means we're waiting for the network to stop making new calls for 500ms
+    await page.goto(url, { waitUntil: 'networkidle0' });
+    // We add style to hide some UI elements we don't want to see on our pdf
+    await page.addStyleTag({
+      content: `header.site-header,
+  #cookie-band,
+  .post-full-image,
+  .post-full-comments,
+  .read-next,
+  .site-footer {
+    display: none !important;
+  }`,
+    });
+    const name = `pdf.pdf`;
+    // Let's generate the pdf and close the browser
+    await page.pdf({ path: `src/uploads/${name}`, format: 'A4' });
+    const distFolder = path.join(__dirname, `../uploads/${name}`);
+    await page.pdf({ path: distFolder, format: 'A4' });
+
+    await browser.close();
+    const url1 = `${process.env.BACKEND_URL}/uploads/${name}`;
+
+    return res.json({ pdf: url1 });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
+
+module.exports = {
+  getPdf,
+};
+
+
+???????????????????????????????????????????????????????????????????????????????????///
+
+
+
+const express = require('express');
+const { pdfController } = require('../../controllers');
+const { User } = require('../../models');
+
+const router = express.Router();
+
+router.get('/:id', async (req, res) => {
+  const UserId = req.params.id;
+  const userInfo = await User.findById(UserId);
+  res.render('home', {
+    name: `${userInfo?.first_name}`,
+    phone: `${userInfo?.phone_number}`,
+    email: `${userInfo?.email}`,
+    company: `${userInfo?.company?.industry}`,
+    address: `${userInfo?.company?.address}`,
+    ein: `${userInfo?.company?.ein}`,
+    loca: `${userInfo?.company?.city}  , ${userInfo?.company?.state}, ${userInfo?.company?.zip}`,
+  });
+});
+
+router.get('/pdfurl/:id', pdfController.getPdf);
+
+module.exports = router;
+
+
+
+
+routes 
+
+////////////////////////////////////////////////////////////
+
+
+FE
+
+
+
+
+import { useQuery } from 'react-query';
+
+import { axios } from '@/lib/axios';
+import { ExtractFnReturnType, QueryConfig } from '@/lib/react-query';
+
+export type PdfResponse = {
+  pdf: string;
+};
+
+export const getPdf = async (id: string): Promise<PdfResponse> => {
+  console.log(id, '_______________________idddd');
+
+  return axios.get(`/pdf/pdfurl/${id}`);
+};
+
+type QueryFnType = typeof getPdf;
+
+type UseInvoiceOptions = {
+  config?: QueryConfig<QueryFnType>;
+  id: string;
+};
+
+export const useInvoicePdf = ({ config, id }: UseInvoiceOptions = { id: '1' }) => {
+  return useQuery<ExtractFnReturnType<QueryFnType>>({
+    ...config,
+    queryKey: ['invoicePdf'],
+    queryFn: () => getPdf(id),
+  });
+};
+
+
+//////////////////////////////////////
+
+import { getPdf } from "@/api/getPdf";
+
+
+
+  const handlePrint = async (id: string) => {
+    setLoader(true);
+    const { pdf } = await getPdf(id);
+    setLoader(false);
+
+    // window.open(pdf, '_blank');
+  };
+
+
+
+
+
+ <Button
+          tabIndex={-1}
+          onClick={() => handlePrint()}
+          className="icon icon-btn  me-2"
+          variant="outline"
+          title="Print"
+        >
+          <i className="fa-solid fa-print"></i>
+        </Button>
